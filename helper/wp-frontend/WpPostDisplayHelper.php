@@ -6,7 +6,6 @@
 
 namespace VncslabCompanion\Helper\WpFrontEnd;
 
-use Symfony\Component\DomCrawler\Crawler;
 use VncslabCompanion\Includes\Init as Init;
 use VncslabCompanion\Helper\PluginProperties as PluginProperties;
 use VncslabCompanion\Helper\PluginDebugHelper as PluginDebugHelper;
