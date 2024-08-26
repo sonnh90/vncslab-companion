@@ -4,7 +4,7 @@
  * @version 1.0.1
  */
 
-namespace VncslabCompanion\Helper;
+ namespace VncslabCompanion\Helper\WpFrontEnd;
 
 use VncslabCompanion\Includes\Init as Init;
 use VncslabCompanion\Helper\PluginProperties as PluginProperties;

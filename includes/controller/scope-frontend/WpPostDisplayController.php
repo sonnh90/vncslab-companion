@@ -11,8 +11,8 @@ use VncslabCompanion\Includes\Base\Activator as Activator;
 use VncslabCompanion\Helper\PluginProperties as PluginProperties;
 use VncslabCompanion\Helper\PluginDebugHelper as PluginDebugHelper;
 
-use VncslabCompanion\Helper\WpPostResourceLoader as WpPostResourceLoader;
-use VncslabCompanion\Helper\WpPostDisplayHelper as WpPostDisplayHelper;
+use VncslabCompanion\Helper\WpFrontend\WpPostResourceLoader as WpPostResourceLoader;
+use VncslabCompanion\Helper\WpFrontend\WpPostDisplayHelper as WpPostDisplayHelper;
 
 class WpPostDisplayController{
 

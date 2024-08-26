@@ -4,7 +4,7 @@
  * @version 1.0.1
  */
 
-namespace VncslabCompanion\Helper;
+namespace VncslabCompanion\Helper\WpFrontEnd;
 
 use Symfony\Component\DomCrawler\Crawler;
 use VncslabCompanion\Includes\Init as Init;
