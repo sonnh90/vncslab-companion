@@ -1,0 +1,82 @@
+/*
+*   @Package devsunsettheme
+* * Need to test the code in the actual position before import. (file devsunset.scss)
+**/
+/*
+Devsunset variables
+-----------------------
+*/
+
+@import 'colorize';
+
+$themeRootUri : 'http://vnlabwin.local.info/wp-content/plugins/sunsetpro/';
+$fontsRscRelativePath: 'assets/fontslocal/';
+$logoAbsPath: '../../../' + $fontsRscRelativePath + 'logo.svg';
+
+$menuBackgroundActive: rgba(255,255,255,0.2);
+$icon-font: 'devsunset-icon';
+$body-font: 'Raleway', 'Helvetical Neue', 'Helvetica', Arial, Verdana, sans-serif;
+
+
+
+/* article formats */
+$defaultArticleWidth: 80vw;
+
+
+/* Main header navigation menu */
+/* Common properties*/
+$defaultBackgroundColor: rgb(255, 255, 255, 0.1);
+/* Menu item Dropdown icon */
+// $showSubmenuIcon: url('../../../assets/icons/sunsetpro-triple-arrows-down-16x16.svg');
+// $showSubmenuIconWidth:1em;
+// $showSubmenuIconHeight:1em;
+
+// $hideSubmenuIcon: url('../../../assets/icons/sunsetpro-arrow-down-27x16.svg');
+// $hideSubmenuIconWidth:1.5em;
+// $hideSubmenuIconHeight:1.5em;
+
+/* Menu items metadata*/
+$defaultArticleHeight: 28em;
+$defaultContentHeight: 15em;
+$defaultFooterHeight: 3em;
+
+$standardPostFeaturedImgHeight: 20em; // no use
+$zIndexArticleDefault:4;
+$articleDistanceEm:2em;
+
+/* Form control */
+$background-form-color: #656565;
+$input-field-underline-color: #cbcbcb;
+
+/* Border information */
+$borderWidth: 1px;
+$borderColor: $light-white;
+
+/*** Screen width. Apply for styling according to the display screern size
+* Referential source to design size : https://getbootstrap.com/docs/5.3/layout/grid/
+*
+***/
+// xxl screen
+$min-xxl-width: 1400px;
+// xl screen
+$max-xl-width: 1399px;
+$min-xl-width: 1200px;
+// lg screen
+$max-lg-width: 1199px;
+$min-lg-width: 992px;
+// md screen
+$max-md-width: 991px;
+$min-md-width: 768px;
+// sm screen
+$max-sm-width: 767px;
+$min-sm-width: 576px;
+// xs screen
+$max-xs-width: 575px;
+
+
+
+
+
+
+
+

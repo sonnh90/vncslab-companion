@@ -1,0 +1,299 @@
+/**
+*    @Package sunsetprotheme
+* * Need to test the code in the actual position before import. (file sunsetpro.scss)
+**/
+
+/*
+	Devsunset Font Icon
+	------------------------------------------------
+	- Define the custom sunsetpro Font here
+	- These code are actually called in sunsetpro.scss => ignore warning
+*/
+
+@import 'variables';
+@import 'colorize';
+
+$defaultSizeH3: 20.8px;
+
+@font-face {
+	font-family: 'sunsetpro-icon';
+	src:    url('../../../assets/fonts/sunsetpro-icon.eot?dxcjr7');
+	src:    url('../../../assets/fonts/sunsetpro-icon.eot?dxcjr7#iefix') format('embedded-opentype'),
+	url('../../../assets/fonts/sunsetpro-icon.ttf?dxcjr7') format('truetype'),
+	url('../../../assets/fonts/sunsetpro-icon.woff?dxcjr7') format('woff'),
+	url('../../../assets/fonts/sunsetpro-icon.svg?dxcjr7#sunset-icon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+.sunsetpro-icon {
+	font-family: 'sunsetpro-icon' !important;
+	// speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.sunsetpro-logo {
+	font-family: 'sunsetpro-icon' !important;
+	// speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/* Assign classname to custom .svg file
+ *1. Assign class name to custom image file (file png). this work with custom png
+* https://windtwebdesign.com/en/how-to-add-custom-icons-to-my-wordpress-menu-without-using-plugins/
+* 2. Add custom font icons
+* https://boldthemes.ticksy.com/article/12694/
+* ** The properties may be overwritten in the main included files
+ */
+
+
+/* Local Left arrow file - OK */
+.sunsetpro-local-chevron-left{
+ //noinspection CssUnknownTarget
+ content: url('../../../assets/fonts/sunsetpro-local-chevron-left.svg');
+ width: 2em; // 32px is OK
+ height: 2em;
+ background-color:transparent;
+ //color: #ffffff;
+ //filter: $filterWhiteValueWithBlackShadow;
+}
+
+.sunsetpro-local-chevron-left::before{
+	//noinspection CssUnknownTarget
+	content: url('../../../assets/fonts/sunsetpro-local-chevron-left.svg');	
+	width: 2em; // 32px is OK
+	height: 2em;
+	background-color:transparent;
+	//color: #ffffff;
+	//filter: $filterWhiteValueWithBlackShadow;
+}
+
+/* Local right arrow file - OK */
+.sunsetpro-local-chevron-right{
+ //noinspection CssUnknownTarget
+ content: url('../../../assets/fonts/sunsetpro-local-chevron-right.svg');
+ width: 2em;
+ height: 2em;
+ background-color:transparent;
+ //color: #ffffff;
+ //filter: $filterWhiteValueWithBlackShadow;
+}
+
+.sunsetpro-local-chevron-right::before{
+	//noinspection CssUnknownTarget
+	content: url('../../../assets/fonts/sunsetpro-local-chevron-right.svg');	
+	width: 2em;
+	height: 2em;
+	padding: 0;
+	background-color:transparent;
+}
+ 
+
+.sunsetpro-audio:before {
+ content: "\e800";
+}
+
+/* These are equivalent chevron arrow left & right
+ * - styling the chevron arrow by styling these pseudo items
+ * - Where to obtain these values ???
+ */
+.sunsetpro-chevron-left:before {
+ content: "\e801";
+}
+
+.sunsetpro-chevron-right:before {
+ content: "\e802";
+}
+
+.sunsetpro-close:before {
+ content: "\e803";
+}
+
+.sunsetpro-comment:before {
+ content: "\e804";
+}
+
+.sunsetpro-link:before {
+ content: "\e805";
+}
+
+.sunsetpro-loading:before {
+ content: "\e806";
+}
+.sunsetpro-logo:before {
+ content: "\e807";
+}
+
+.sunsetpro-menu:before {
+ content: "\e808";
+}
+
+.sunsetpro-pencil:before {
+ content: "\e809";
+}
+
+.devunset-pics:before {
+ content: "\e80a";
+}
+
+.sunsetpro-search:before {
+ content: "\e80b";
+}
+
+.sunsetpro-share:before {
+ content: "\e80c";
+}
+
+.sunsetpro-tag:before {
+ content: "\e80d";
+}
+
+.sunsetpro-video:before {
+ content: "\e80e";
+}
+
+/*
+* ==============================================
+* Self-defined fonts icons from local host
+* ==============================================
+*/
+
+.sunsetpro-twitter{
+ //noinspection CssUnknownTarget
+ content: url('../../../assets/icons/sunsetpro-twitter.svg');
+ width: 2em;
+ height: 2em;
+ background-color:transparent;
+ //color: #ffffff;
+ //text-shadow: 1px 1px black;
+}
+
+.sunsetpro-facebook{
+ //noinspection CssUnknownTarget
+ content: url('../../../assets/icons/sunsetpro-facebook.svg');
+ width: 2em;
+ height: 2em;
+ background-color:transparent;
+ //color: #ffffff;
+ //text-shadow: 1px 1px black;
+}
+
+.sunsetpro-google-plus{
+ //noinspection CssUnknownTarget
+ content: url('../../../assets/icons/sunsetpro-google-plus.svg');
+ width: 2em;
+ height: 2em;
+ background-color:transparent;
+ //color: #ffffff;
+ //text-shadow: 1px 1px black;
+}
+
+.sunsetpro-clock{
+ //noinspection CssUnknownTarget
+ content: url('../../../assets/icons/sunsetpro-clock.svg');
+ width: 2em;
+ height: 2em;
+ background-color:transparent;
+ //color: #ffffff;
+}
+
+.sunsetpro-comment-bubble{
+ //noinspection CssUnknownTarget
+ content: url('../../../assets/icons/sunsetpro-comment-bubble.svg');
+ width: 2em;
+ height: 2em;
+ background-color:transparent;
+ //color: #ffffff;
+}
+
+.sunsetpro-edit{
+ //noinspection CssUnknownTarget
+ content: url('../../../assets/icons/sunsetpro-edit.svg');
+ width: 2em;
+ height: 2em;
+ background-color:transparent;
+ //color: #ffffff;
+}
+
+.sunsetpro-delete{
+ //noinspection CssUnknownTarget
+ content: url('../../../assets/icons/sunsetpro-delete.svg');
+ width: 2em;
+ height: 2em;
+ background-color:transparent;
+ //color: #ffffff;
+}
+
+/* These 2 values already start from <theme_root_dir>/assets/ */
+// Icons
+.sunsetpro-comment-white {
+ //noinspection CssUnknownTarget
+ // content: url('../../assets/icons/sunsetpro-comment-white.svg');
+ content: url('../../../assets/icons/sunsetpro-comment-white.svg');
+ width: 2em;
+ height: 2em;
+ background-color: transparent;
+ //color: #ffffff;
+}
+
+
+.sunsetpro-share-white{
+ //noinspection CssUnknownTarget
+ content: url('../../../assets/icons/sunsetpro-share-white.svg');
+ width: 2em;
+ height: 2em;
+ background-color:transparent;
+ //color: #ffffff;
+}
+
+.sunsetpro-dropdown-simple{
+ //noinspection CssUnknownTarget
+ content: url('../../../assets/icons/sunsetpro-dropdown-simple.svg');
+ width: 2em;
+ height: 2em;
+ background-color:transparent;
+ //color: #ffffff;
+}
+
+.sunsetpro-tag{
+	content: url('../../../assets/fontslocal/tag.svg');
+	width: 2em;
+	height: 2em;
+	background-color:transparent;
+}
+
+// For link post format
+.sunsetpro-link{
+	content: url('../../../assets/fonts/link.svg');
+	width: 2em;
+	height: 2em;
+	background-color:transparent;
+}
+
+// Blog posts format - loading 
+.sunsetpro-loading{
+	content: url('../../../assets/fontslocal/loading.svg');
+	width: 4em;
+	height: 4em;
+	background-color:transparent;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}

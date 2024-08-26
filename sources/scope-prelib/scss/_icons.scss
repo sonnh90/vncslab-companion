@@ -1,0 +1,27 @@
+/**
+*    @Package sunsetprotheme
+* * Need to test the code in the actual position before import. (file sunsetpro.scss)
+**/
+
+// @import './mixins';
+@import './colorize';
+
+// Carousel thumbnail controller - prev button
+.pills-control-prev-icon{
+    content:url('../../../assets/scope-frontend/icons/carousel-left-arrow-prev-controller.svg');
+    width: 2em;
+    height: 2em;
+    background-color:transparent;
+    filter: $filterWhiteValue;
+}//.pills-control-prev-icon
+
+// Carousel thumbnail controller - next button
+.pills-control-next-icon{
+    content:url('../../../assets/scope-frontend/icons/carousel-right-arrow-next-controller.svg');
+    width: 2em;
+    height: 2em;
+    background-color:transparent;
+    filter: $filterWhiteValue;
+}//.pills-control-next-icon
+
+

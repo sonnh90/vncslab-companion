@@ -1,0 +1,595 @@
+/**
+*    @Package devsunsettheme
+* * Need to test the code in the actual position before import. (file devsunset.scss)
+**/
+
+/*
+	Devsunsetnew Variables for mixins, keyframes
+	------------------------------------------------
+*/
+
+@import 'variables';
+
+$highlightedBackgroundColorMenuItem: rgba(255,255,255,0.2);
+$defaultBackgroundColorFirstMenuItem: transparent;
+$defaultBackgroundColorSubMenuItem: $light-black;
+
+$rotateSubmenuItemIconIconWhenShowSubmenuTime: 160ms;
+
+$changeMainMenuItemIconWhenShowSubMenuTime: 320ms;
+$changeMainMenuItemIconWhenHideSubMenuTime: 320ms;
+/*
+	Devsunsetnew Mixins
+	------------------------------------------------
+*/
+
+/* Source transition :
+* https://css-tricks.com/almanac/properties/t/transition/
+*/
+
+/* 1. 'transition' properties mixin */
+// For transition properties:
+/* @mixin animateEase( $attr, $time) {
+  -webkit-transition: $attr $time ease;
+  -moz-transition: $attr $time ease;
+  -ms-transition: $attr $time ease;
+  -o-transition: $attr $time ease;
+  transition: $attr $time ease;
+} */
+
+// rename from animateEase mixin
+@mixin transitionEase( $attr, $time) {
+  -webkit-transition: $attr $time ease !important;
+  -moz-transition: $attr $time ease !important;
+  -ms-transition: $attr $time ease !important;
+  -o-transition: $attr $time ease !important;
+  transition: $attr $time ease !important;
+}
+
+
+/* @mixin transitionEaseOut( $attr, $time) {
+  -webkit-transition: $attr $time ease-out;
+  -moz-transition: $attr $time ease-out;
+  -ms-transition: $attr $time ease-out;
+  -o-transition: $attr $time ease-out;
+  transition: $attr $time ease-out;
+}
+ */
+// rename from transitionEaseOut
+@mixin transitionEaseOut( $attr, $time) {
+  -webkit-transition: $attr $time ease-out !important;
+  -moz-transition: $attr $time ease-out !important;
+  -ms-transition: $attr $time ease-out !important;
+  -o-transition: $attr $time ease-out !important;
+  transition: $attr $time ease-out !important;
+}
+
+
+/* @mixin transitionEaseInOut( $attr, $time) {
+  -webkit-transition: $attr $time ease-in-out;
+  -moz-transition: $attr $time ease-in-out;
+  -ms-transition: $attr $time ease-in-out;
+  -o-transition: $attr $time ease-in-out;
+  transition: $attr $time ease-in-out;
+} */
+
+// rename from transitionEaseInOut
+@mixin transitionEaseInOut( $attr, $time) {
+  -webkit-transition: $attr $time ease-in-out !important;
+  -moz-transition: $attr $time ease-in-out !important;
+  -ms-transition: $attr $time ease-in-out !important;
+  -o-transition: $attr $time ease-in-out !important;
+  transition: $attr $time ease-in-out !important;
+}
+
+/* @mixin animateLinear( $attr, $time) {
+  -webkit-transition: $attr $time linear;
+  -moz-transition: $attr $time linear;
+  -ms-transition: $attr $time linear;
+  -o-transition: $attr $time linear;
+  transition: $attr $time linear;
+} */
+
+// rename from animateLinear
+@mixin transitionLinear( $attr, $time) {
+  -webkit-transition: $attr $time linear !important;
+  -moz-transition: $attr $time linear !important;
+  -ms-transition: $attr $time linear !important;
+  -o-transition: $attr $time linear !important;
+  transition: $attr $time linear !important;
+}
+
+/* 2. animation properties mixin */
+// For animation property:
+@mixin animationEaseInOut( $attr, $durationTime){
+  -webkit-animation: $attr $durationTime ease-in-out !important;
+  -moz-animation: $attr $durationTime ease-in-out !important;
+  -ms-animation: $attr $durationTime ease-in-out !important;
+  -o-animation: $attr $durationTime ease-in-out !important;
+  animation: $attr $durationTime ease-in-out !important;
+}
+
+
+/*----------------- Typical effects mixins ---------------------*/
+// 
+@mixin translateVertical( $distance ){  
+  -webkit-transform: translateY( $distance );
+  -moz-transform: translateY( $distance );
+  -ms-transform: translateY( $distance );
+  -o-transform: translateY( $distance );
+  transform: translateY( $distance );
+}
+
+/* 
+@mixin translateHorizontal( $distance ){  
+  -webkit-transform: translateX( $distance ) !important;
+  -moz-transform: translateX( $distance ) !important;
+  -ms-transform: translateX( $distance ) !important;
+  -o-transform: translateX( $distance ) !important;
+  transform: translateX( $distance ) !important;
+} */
+
+@mixin translateHorizontal( $distance ){  
+  -webkit-transform: translateX( $distance );
+  -moz-transform: translateX( $distance );
+  -ms-transform: translateX( $distance );
+  -o-transform: translateX( $distance );
+  transform: translateX( $distance );
+}
+
+@mixin translateHorizontal_EaseInOut( $distance, $time ){  
+  -webkit-transform: translateX( $distance );
+  -moz-transform: translateX( $distance );
+  -ms-transform: translateX( $distance );
+  -o-transform: translateX( $distance );
+  transform: translateX( $distance );
+  @include transitionEaseInOut( -webkit-transform, $time);
+  @include transitionEaseInOut( -moz-transform, $time);
+  @include transitionEaseInOut( -ms-transform, $time);
+  @include transitionEaseInOut( -o-transform, $time);
+  @include transitionEaseInOut( transform, $time);
+}
+
+@mixin translateVertical_EaseInOut( $distance, $time ){  
+  -webkit-transform: translateY( $distance );
+  -moz-transform: translateY( $distance );
+  -ms-transform: translateY( $distance );
+  -o-transform: translateY( $distance );
+  transform: translateY( $distance );
+  @include transitionEaseInOut( -webkit-transform, $time);
+  @include transitionEaseInOut( -moz-transform, $time);
+  @include transitionEaseInOut( -ms-transform, $time);
+  @include transitionEaseInOut( -o-transform, $time);
+  @include transitionEaseInOut( transform, $time);
+}
+
+// 
+@mixin transform($var){
+  -webkit-transform: $var;
+  -moz-transform:  $var;
+  -ms-transform:  $var;
+  -o-transform:  $var;
+  transform: $var;
+}
+
+@mixin transformEaseInOut($var, $time, $timingFunction){
+  -webkit-transform: $var $time $timingFunction !important;
+  -moz-transform:  $var $time $timingFunction !important;
+  -ms-transform:  $var $time $timingFunction !important;
+  -o-transform:  $var $time $timingFunction !important;
+  transform: $var $time $timingFunction !important;
+}//transformEaseInOut
+
+/**
+Example values of fillBackgroundGradient mixin
+  background: -webkit-linear-gradient( to left top, blue, red);
+  background: -moz-linear-gradient( to left top, blue, red);
+  background: -ms-linear-gradient( to left top, blue, red);
+  background: -o-linear-gradient( to left top, blue, red);
+  background: linear-gradient( to left top, blue, red);
+
+**/
+@mixin fillBackgroundGradient( $startPosition, $endPosition, $startColor, $endColor){
+  background: -webkit-linear-gradient( to $startPosition $endPosition, $startColor, $endColor);
+  background: -moz-linear-gradient( to $startPosition $endPosition, $startColor, $endColor);
+  background: -ms-linear-gradient( to $startPosition $endPosition, $startColor, $endColor);
+  background: -o-linear-gradient( to $startPosition $endPosition, $startColor, $endColor);
+  background: linear-gradient( to $startPosition $endPosition, $startColor, $endColor);
+}
+
+/* @mixin transitionProps($var, $durationTime){
+  -webkit-transition: $var $durationTime;
+  -moz-transition:  $var $durationTime;
+  -ms-transition:  $var $durationTime;
+  -o-transition:  $var $durationTime;
+  transition: $var $durationTime;
+  -webkit-transform:
+ } */
+ 
+ @mixin fullwidth(){
+  width: 100%;
+  height: auto;
+ }
+ @keyframes spin{
+   from { transform: rotate(0deg); }
+   to { transform: rotate(360deg); }
+ }
+ 
+ @keyframes clockwiseSpin{
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+ }
+ 
+@keyframes counterclockwiseSpin{
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+/*----------------------------------------------------*/
+/** 3. Main header navigation menu  **/
+/*----------------------------------------------------*/
+
+/* 3.1. Mouse over/mouse out of a menu item */
+/* 3.1.1. Mouse over menu item effects */
+/* a. First level menu items (level 0) */
+@keyframes mouseover_first_menu_item_effect{
+  from {
+    background-color: $defaultBackgroundColorFirstMenuItem;
+    //opacity: 0;
+    @include transitionEaseInOut( background-color, 320ms );
+  }
+
+  to {
+    background-color: $highlightedBackgroundColorMenuItem;
+    //opacity:1;
+    @include transitionEaseInOut( background-color, 320ms );
+  }
+}
+
+@mixin mouseover-first-menu-item-animation-mixin( $time ){
+  @keyframes mouseover_first_menu_item_animation{
+    from {
+      background-color: $defaultBackgroundColorFirstMenuItem;
+      //opacity: 0;
+      @include transitionEaseInOut( background-color, $time );
+    }
+  
+    to {
+      background-color: $highlightedBackgroundColorMenuItem;
+      //opacity:1;
+      @include transitionEaseInOut( background-color, $time );
+    }
+  };
+
+  animation: mouseover_first_menu_item_animation $time;
+}
+
+/* b. Sub level menu items (level 1,2,3 ) */
+@keyframes mouseleave_first_menu_item_effect{
+  from {
+    background-color: $highlightedBackgroundColorMenuItem;
+    //opacity:1;
+    @include transitionEaseInOut( background-color, 320ms );
+  }
+
+  to {
+    background-color: $defaultBackgroundColorFirstMenuItem;
+    //opacity:0;
+    @include transitionEaseInOut( background-color, 320ms );
+  }
+}
+
+@mixin mouseleave-first-menu-item-animation-mixin( $time ){
+  @keyframes mouseleave_first_menu_item_animation{
+    from {
+      background-color: $highlightedBackgroundColorMenuItem;
+      //opacity:1;
+      @include transitionEaseInOut( background-color, $time );
+    }
+  
+    to {
+      background-color: $defaultBackgroundColorFirstMenuItem;
+      //opacity:0;
+      @include transitionEaseInOut( background-color, $time );
+    }
+  };
+
+  animation: mouseleave_first_menu_item_animation $time;
+}
+
+/* 3.1.2. Mouse leave menu item effects */
+/* a. First level menu items (level 0) */
+@keyframes mouseover_sub_menu_item_effect{
+  from {
+    background-color: $defaultBackgroundColorSubMenuItem;
+    @include transitionEaseInOut( background-color, 320ms );
+  }
+
+  to {
+    background-color: $highlightedBackgroundColorMenuItem;
+    @include transitionEaseInOut( background-color, 320ms );
+  }
+}
+
+@mixin mouseover-sub-menu-item-animation-mixin( $time ){
+  @keyframes mouseover_sub_menu_item_animation{
+    from {
+      background-color: $defaultBackgroundColorSubMenuItem;
+      @include transitionEaseInOut( background-color, $time );
+    }
+  
+    to {
+      background-color: $highlightedBackgroundColorMenuItem;
+      @include transitionEaseInOut( background-color, $time );
+    }
+  };
+
+  animation: mouseover_sub_menu_item_animation $time;
+}
+
+/* b. Sub level menu items (level 1,2,3 ) */
+
+@keyframes mouseleave_sub_menu_item_effect{
+  from {
+    background-color: $highlightedBackgroundColorMenuItem;
+    @include transitionEaseInOut( background-color, 320ms );
+  }
+
+  to {
+    background-color: $defaultBackgroundColorSubMenuItem;
+    @include transitionEaseInOut( background-color, 320ms );
+  }
+}
+
+@mixin mouseleave-sub-menu-item-animation-mixin( $time ){
+  @keyframes mouseleave_sub_menu_item_animation{
+    from {
+      background-color: $defaultBackgroundColorSubMenuItem;
+      @include transitionEaseInOut( background-color, $time );
+    }
+  
+    to {
+      background-color: $highlightedBackgroundColorMenuItem;
+      @include transitionEaseInOut( background-color, $time );
+    }
+  };
+
+  animation: mouseleave_sub_menu_item_animation $time;
+}
+
+
+/* 3.2. Effects for menu items level 0 */
+/* 3.2.1. Show sub menu items of the main nav menu item  */
+@mixin show-submenu-icon-animation-mixin( $time ){
+  @keyframes show_submenu_items_effect{
+    from {
+      content:$hideSubmenuIcon;
+      width: $hideSubmenuIconWidth;
+      height: $hideSubmenuIconHeight;
+      transform: scale(1,0);
+      @include transitionEaseOut( content, $time );
+      //@include transitionEaseInOut( 'width',$time );
+      //@include transitionEaseInOut( 'height', $time );
+      @include transitionEaseOut( transform, $time );
+    }
+  
+    to {
+      content:$showSubmenuIcon;
+      width: $showSubmenuIconWidth;
+      height: $showSubmenuIconHeight;
+      transform: scale(1,1);
+      @include transitionEaseOut( content, $time );
+      //@include transitionEaseInOut( 'width', $time );
+      //@include transitionEaseInOut( 'height', $time );
+      @include transitionEaseOut( transform, $time );
+    }
+  };
+  
+  animation: show_submenu_items_effect $time;
+}
+
+
+
+/* 3.2.2. Hide sub menu items of the main nav menu item */
+@mixin hide-submenu-icon-animation-mixin( $time ){
+  @keyframes hide_submenu_items_effect{
+    from {
+      content:$showSubmenuIcon;
+      width: $showSubmenuIconWidth;
+      height: $showSubmenuIconHeight;
+      transform: scale( 0.6,0.6 );
+      @include transitionEaseOut( content, $time );
+      //@include transitionEaseInOut( 'width',$time );
+      //@include transitionEaseInOut( 'height', $time );
+      @include transitionEaseOut( transform, $time );
+    }
+  
+    to {
+      content:$hideSubmenuIcon;
+      width: $hideSubmenuIconWidth;
+      height: $hideSubmenuIconHeight;
+      transform: scale(1,0);
+      @include transitionEaseOut( content, $time );
+      //@include transitionEaseInOut( 'width',$time );
+      //@include transitionEaseInOut( 'height', $time );
+      @include transitionEaseOut( transform, $time );
+    }
+  };
+
+  animation: hide_submenu_items_effect $time;
+}
+
+/* 3.3. Effects for menu items level 1,2,3 */
+@mixin rotate-submenu-item-icon-animation-mixin( $time ){
+  @keyframes rotate_submenu_item_icon_effect{
+    from{
+      rotate:0deg;
+      @include transitionEaseOut( rotate, $time );
+    }
+
+    to {
+      rotate:-90deg;
+      tranform: rotate(-90deg);
+      @include transitionEaseOut( rotate, $time );
+      //@include transitionEaseOut( 'tranform', $time );
+    }
+  };
+
+  animation: rotate_submenu_item_icon_effect $time;
+}
+
+@mixin restore-submenu-item-icon-animation-mixin( $time ){
+  @keyframes restore_submenu_item_icon_effect{
+    from{
+      rotate:-90deg;
+      @include transitionEaseOut( rotate, $time );
+    }
+
+    to {
+      rotate:0deg;
+      tranform: rotate(0deg);
+      @include transitionEaseOut( rotate, $time );
+      // @include transitionEaseOut( 'tranform', $time );
+    }
+  };
+
+  animation: restore_submenu_item_icon_effect $time;
+}
+
+/* 3.4. Effect for showing/hiding submenu items */
+/* DEBUGGING_TAG*/
+/* 3.4.1. Show/hide submenu level 1 */
+// a. Show first level sub menu animation - OK 
+@keyframes show_first_level_submenu_effect{
+  from{
+    display:none;
+    opacity:0;
+    background-color: $defaultBackgroundColorSubMenuItem;  
+    @include translateVertical( -20% );
+    @include transitionEaseOut( transform, 480ms );
+    // transform:translateY(-20%);// OK - Original -100%
+    // @include transitionEaseOut( 'transform', $time );
+  }
+
+  to {
+    display:block;
+    opacity:1;
+    background-color: $defaultBackgroundColorSubMenuItem;  
+    @include translateVertical( 0% );
+    @include transitionEaseOut( transform, 480ms );
+    // transform: translateY(0);
+    //@include transitionEaseOut( 'transform', $time );
+    //@include transitionEaseOut( 'display', $time );
+  }
+};
+
+@mixin show-first-level-submenu-animation-mixin( $time ){
+  @keyframes show_first_level_submenu_animation{
+    from{
+      display:none;
+      opacity:0;
+      transform:translateY(-20%);// Original -100%
+      @include transitionEaseOut( transform, $time );
+      @include transitionEaseOut( opacity, $time );
+    }
+
+    to {
+      display:block;
+      opacity:1;
+      transform: translateY(0);
+      @include transitionEaseOut( transform, $time );
+      @include transitionEaseOut( opacity, $time );
+    }
+  };
+
+  animation: show_first_level_submenu_animation $time;
+}
+
+// b. Hide first level submenu animation - Not finish
+
+@keyframes hide_first_level_submenu_effect{
+  from{
+    display:block;
+    opacity:1;
+    background-color: $defaultBackgroundColorSubMenuItem;  
+    // transform:translateY(0);// Original -100%
+    @include translateVertical( 0% ); // define animation here
+    @include transitionEaseOut( transform, 320ms ); // define 'transform' property will be animated
+  }
+
+  to {
+    display:none;
+    opacity:0;
+    background-color: $defaultBackgroundColorSubMenuItem;  
+    // transform: translateY(-20%);
+    @include translateVertical( -20% );
+    @include transitionEaseOut( transform, 320ms );
+  }
+};
+
+@mixin hide-first-level-submenu-animation-mixin( $time ){
+  @keyframes hide_first_level_submenu_animation{
+    from{
+      display:block;
+      opacity:1;
+      transform:translateY(0);// Original -100%
+      @include transitionEaseOut( transform, $time );
+      @include transitionEaseOut( opacity, $time );
+    }
+
+    to {
+      display:none;
+      opacity:0;
+      transform: translateY(-20%);
+      @include transitionEaseOut( transform, $time );
+      @include transitionEaseOut( opacity, $time );
+    }
+  };
+
+  animation: hide_first_level_submenu_animation $time;
+}
+
+/* 3.4.2. Show/hide submenu level 2,3,4 */
+// a. Show sub level sub menu animation - OK 
+@keyframes show_sub_level_submenu_effect{
+  from{
+    display:none;
+    opacity:0;
+    background-color:$defaultBackgroundColorSubMenuItem;
+    @include translateHorizontal( -20% );
+    @include transitionEaseOut( transform, 480ms );
+    // transform:translateY(-20%);// OK - Original -100%
+    // @include transitionEaseOut( 'transform', $time );
+  }
+
+  to {
+    display:block;
+    opacity:1;
+    background-color:$defaultBackgroundColorSubMenuItem;
+    @include translateHorizontal( 0 );
+    @include transitionEaseOut( transform, 480ms );
+    // transform: translateY(0);
+    //@include transitionEaseOut( 'transform', $time );
+    //@include transitionEaseOut( 'display', $time );
+  }
+};
+
+
+// b. Hide sub level sub menu animation 
+@keyframes hide_sub_level_submenu_effect{
+  from{
+    display:block;
+    opacity:1;
+    // transform:translateY(0);// Original -100%
+    @include translateHorizontal( 0 );
+    @include transitionEaseOut( transform, 480ms );
+  }
+
+  to {
+    display:none;
+    opacity:0;
+    // transform: translateY(-20%);
+    @include translateHorizontal( -20% );
+    @include transitionEaseOut( transform, 480ms );
+  }
+};

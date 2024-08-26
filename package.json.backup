@@ -1,0 +1,15 @@
+{
+    "name":"vncslab-companion-plugin",
+    "version":"1.0.1",
+    "description":"This is a WordPress plugin for main office supplies products",
+    "author":"Leon Nguyen <@sonnh2109@gmail.com>",
+    "keywords":[
+        "WordPress",
+        "plugin",
+        "PHP",
+        "composer",
+        "gulp",
+        "ES6",
+        "scss"
+    ]
+}

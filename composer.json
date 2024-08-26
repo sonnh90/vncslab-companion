@@ -1,0 +1,53 @@
+{
+    "name": "vncsadmin/vncslab-companion",
+    "description": "This is a comprehensive multi-purpose plugin for the main website VNCSLAB - using Blocksy themes.",
+    "type": "project",
+    "require-dev": {
+        "mobiledetect/mobiledetectlib": "^4.8"
+    },
+    "license": "GPLv3",
+    "autoload": {
+        "psr-4": {
+            "VncslabCompanion\\": "/",
+            "VncslabCompanion\\ApiPublic\\": "api-public/",
+            "VncslabCompanion\\Sources\\": "sources/",
+            "VncslabCompanion\\Database\\": "database/",            
+            "VncslabCompanion\\Helper\\": "helper/",
+            "VncslabCompanion\\Helper\\WpAdmin\\": "helper/wp-admin/",
+            "VncslabCompanion\\Helper\\WpEditor\\": "helper/wp-editor/",
+            "VncslabCompanion\\Helper\\WpFrontend\\": "helper/wp-frontend/",
+            "VncslabCompanion\\Includes\\": "includes/",
+            "VncslabCompanion\\Includes\\Api\\": "includes/api/",
+            "VncslabCompanion\\Includes\\Base\\": "includes/base/",
+            "VncslabCompanion\\Includes\\Content\\": "includes/content/",
+            "VncslabCompanion\\Includes\\Content\\Block\\": "includes/content/block/",
+            "VncslabCompanion\\Includes\\Content\\Carousel\\": "includes/content/carousel/",
+            "VncslabCompanion\\Includes\\Content\\Menu\\": "includes/content/menu/",
+            "VncslabCompanion\\Includes\\Content\\Widget\\": "includes/content/widget/",
+            "VncslabCompanion\\Includes\\Controller\\": "includes/controller/",
+            "VncslabCompanion\\Includes\\Controller\\ScopeAdmin\\": "includes/controller/scope-admin/",
+            "VncslabCompanion\\Includes\\Controller\\ScopeEditor\\": "includes/controller/scope-editor/",
+            "VncslabCompanion\\Includes\\Controller\\ScopeFrontend\\": "includes/controller/scope-frontend/",
+            "VncslabCompanion\\Includes\\Controller\\ScopeFrontend\\WooCommerce\\": "includes/controller/scope-frontend/woocommerce/",
+            "VncslabCompanion\\Includes\\Display\\": "includes/display/",
+            "VncslabCompanion\\Includes\\Display\\Page\\": "includes/display/page/",
+            "VncslabCompanion\\Includes\\Display\\Post\\": "includes/display/post/",
+            "VncslabCompanion\\Includes\\Template\\": "includes/template/",
+            "VncslabCompanion\\Includes\\Template\\ScopeAdmin\\": "includes/template/scope-admin/",
+            "VncslabCompanion\\Includes\\Template\\ScopeEditor\\": "includes/template/scope-editor/",
+            "VncslabCompanion\\Includes\\Template\\ScopeFrontend\\": "includes/template/scope-frontend/",
+            "VncslabCompanion\\Troubleshoot\\": "troubleshoot/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Leon Nguyen",
+            "email": "sonnh2109@gmail.com"
+        }
+    ],
+    "minimum-stability": "alpha",
+    "require": {
+        "scotteh/php-dom-wrapper": "^3.0",
+        "symfony/dom-crawler": "^7.1"
+    }
+}

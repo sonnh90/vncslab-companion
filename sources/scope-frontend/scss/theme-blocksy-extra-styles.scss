@@ -1,0 +1,35 @@
+/***
+* Package: vncslab-companion
+* Author : Leon Nguyen <sonnh2109@gmail.com>
+*/
+
+/** Default CSS added */
+/** about us page **/
+.ct-custom.elementor-widget-image-box,
+.ct-custom .elementor-widget-container {
+	height: 100%;
+}
+
+.ct-custom .elementor-widget-container {
+	overflow: hidden;
+}
+
+.ct-custom .elementor-image-box-content {
+	padding: 0 30px;
+}
+
+/** === 2024-May VNCS LAB customization on global Blocksy Themes Files **/
+/** I. Global Header - for all pages - all devices **/
+/** 1. Change background color for the global header: #d8d8d8 - hex or 211,211,211 -rgb **/
+/** 1.1. Set to light grey  **/
+/** 1.2. Set border top & bottom - light black - hex:#454545 or rgb:69,69,69  **/
+
+header#header{
+    div:is( [data-device="desktop"], [data-device="mobile"], [data-device="tablet"] ){
+        background-color: rgba(211,211,211,0.5);
+        border-style: solid none solid none;
+        border-color: rgba(69,69,69,0.5);
+        border-width: 1px;
+    }//div:is( [data-device="desktop"], [data-device="mobile"], [data-device="tablet"] )
+}//header#header
+

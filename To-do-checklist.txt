@@ -1,0 +1,55 @@
+
+=== I. Features list
+1. Refactor the PluginDebugHelper class. 
+- Can apply PluginDebugHelper property to the static property of Init instance.
+=> Call to them anywhere
+
+2. Still troubleshooting the debug page template 
+
+3. Need to add below custom CSS in the file additional-css-theme-blocksy.css (source directory)
+
+4. All prerequisite libraries (such as Bootstrap) are downloaded & put directly in the folders:
+- assets/scope-prelib/css (For CSS libraries )
+- assets/scope-prelib/js (For JS libraries)
+
+
+=== II. Error resolved === 
+
+1. Successfully added the VNCSLAB debug template to both WordPress default post type (post, page) editor.
+- The Editor used is Gutenberg editor.
+
+2. Add 2 custom template for default WordPress post types (post, page):
+- Debug Template
+- Custom Template
+
+3. Complete setup gulp tasks to compile SCSS & JS ESNext to CSS & vanilla JS
+
+
+=== II. Error that need further investigation
+
+1. Cannot save the custom VNCSLAB debug template on post/page editor (Gutenberg) - OK
+
+2. Setup Gulp tasks to complie SCSS & JS ES6 to traditional CSS & JS - OK
+- Complete a gulp task to compile all SCSS & JS ES 6 from frontend-source to assets - OK
+
+3. Create an adming setting pages to introduce about the vncslab-companion plugins
+
+4. Customize the Blocksy's header main navigation menu:
+- For menu which has too many sub items - add overflow: scroll
+
+5. Customize WooCommerce product page:
+- Display as bootstrap carousel if there is too many thumbnails images
+- Change language of some fields to Vietnamese. 
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,221 @@
+/***
+* Package: vncslab-companion
+* Author : Leon Nguyen <sonnh2109@gmail.com>
+*/
+
+@import '../../scope-prelib/scss/variables';
+@import '../../scope-prelib/scss/mixins';
+@import '../../scope-prelib/scss/colorize';
+@import '../../scope-prelib/scss/icons';
+
+$mediaItem_TransitionTime: 640ms; 
+// Define start position & end position of media item - distance metric
+$mediaItemLeft_StartPosition: -50%;
+$mediaItemLeft_EndPosition: 0%;
+$mediaItemRight_StartPosition: 50%;
+$mediaItemRight_EndPosition: 0%;
+
+/** I. Define helper functions */
+/** 1. Transition effect for media items - translate in */
+/** a. Keyframes definition - utilize some defined mixins in the "scope-prelib" directory */
+@keyframes translate_in_left_item_animation{
+    0% {
+        @include translateHorizontal( $mediaItemLeft_StartPosition );
+    }
+
+    100% {
+        @include translateHorizontal( $mediaItemLeft_EndPosition );
+    }
+}//translate_in_left_item_animation // OK for full version
+
+@keyframes translate_in_right_item_animation{
+    0% {
+        @include translateHorizontal( $mediaItemRight_StartPosition );
+    }
+
+    100% {
+        @include translateHorizontal( $mediaItemRight_EndPosition );
+    }
+}//translate_in_left_item_animation
+
+/** b. Mixin transition - not work */
+
+/** II. Main styles */
+
+/** 1. Styling for display responsive */
+/** 1.1. Desktop */
+@media screen and (min-width: $min-md-width){
+
+    article#post-4129{
+
+       
+        & > div.entry-content{  
+
+            // 1. Styling the table of content
+            & > div#rank-math-toc{
+                // border: 1px solid red;//OK
+                
+                & nav > ul > li:nth-child(2) > ul {                   
+                    // Select the first 10 list items & reveal.
+                    // Apply for all li item ?
+                    & > li:nth-child( -n+10 ){
+                        display: list-item !important;//OK
+                        // color: red;
+                    }
+
+                    // Select the last 10 items & hide
+                    & > li:nth-child( n+11 ){
+                        display: none !important;
+                    }
+                }//& nav > ul            
+
+            }//& > div#rank-math-toc
+            
+            // 2. Styling the main content 
+            & > div.wp-block-group.cocoa-benefits-container-desktop{
+                display: block;
+                //border: 4px solid red;
+            }//& > div.wp-block-group.cocoa-benefits-container-desktop
+        
+            & > div.wp-block-group.cocoa-benefits-container-mobile{
+                display: none;
+            }//& > div.wp-block-group.cocoa-benefits-container-mobile           
+    
+        }//& > div.entry-content
+    
+    }//article#post-4129
+
+
+}//@media only screen and (max-width: $max-sm-width)
+
+
+
+/** 1.2. Mobile phone display */
+//Mobile phone display
+@media screen and (min-width: 0px ) and (max-width: $max-sm-width){
+
+    article#post-4129{
+
+        & > div.entry-content{  
+
+            // 1. Styling the table of content
+            & > div#rank-math-toc{
+                //border: 1px solid red;
+
+                // Select fist 10 list items
+                & nav > ul > li:nth-child(2) > ul {
+
+                    // Select the first 10 list items & reveal. This target all selector
+                    & > li:nth-child( -n+10 ){
+                        display: none !important;
+                    }
+
+                    // Select the last 10 items
+                    & > li:nth-child( n+11 ){
+                        display: list-item !important;
+                        //color: blue;
+                    }
+
+                }//& nav > ul
+                
+
+            }//& > div#rank-math-toc
+            
+            // 2. Styling the main content
+            & > div.wp-block-group.cocoa-benefits-container-desktop{
+                display: none;
+            }//& > div.wp-block-group.cocoa-benefits-container-desktop
+        
+            & > div.wp-block-group.cocoa-benefits-container-mobile{
+                display: block;
+                //border: 4px solid blue;
+            }//& > div.wp-block-group.cocoa-benefits-container-mobile           
+    
+        }//& > div.entry-content
+    
+    }//article#post-4129
+
+
+}//@media only screen and (max-width: $max-sm-width)
+
+
+
+/** 2. Stylings for cocoa benefits content desktop group */
+/** Temporary target specific article post_ID = 4129*/
+article#post-4129{
+
+    /** Main content of WP Post */
+    & > div.entry-content{
+
+        /** 1. Display cocoa benefits content for desktop */
+        & > div.wp-block-group.cocoa-benefits-container-desktop{
+
+            /** 1.1. Media contains text and image about chocolate benefits*/
+
+            /** 1.1.1. All media of chocolate benefits */
+            & > div.wp-block-media-text.chocolate-benefits{
+                padding-top:0;
+                padding-bottom:0;
+                margin-top:0;
+                margin-bottom:0;
+                border:2px solid black;
+
+                /** a. Image area */ 
+                & > figure.wp-block-media-text__media{
+                    height: 100%;
+
+                    /** Inner image */
+                    & > img{
+                        height: 100%;
+                    }
+                }//figure.wp-block-media-text__media
+
+                /** b. Text area */ 
+                & > figure.wp-block-media-text__content{
+                    height: 100%
+                }//figure.wp-block-media-text__media
+            }//div.wp-block-media-text.chocolate-benefits
+
+            /** 1.1.2. Override all elements except the 1st child */
+            & > div.wp-block-media-text.chocolate-benefits ~ div.wp-block-media-text.chocolate-benefits{
+                border-top:none;
+            }
+
+
+            /** 1.1.3. Apply transition effects for media items */
+            & > div.wp-block-media-text.chocolate-benefits{
+                visibility: visible;
+
+                /** a. First item of media item: either image of textual content */
+                & > *:first-child{
+                    visibility: visible;
+                    animation: translate_in_left_item_animation $mediaItem_TransitionTime;//OK
+
+                    &.hide{
+                        visibility:hidden;
+                    }
+                }//*:first-child
+
+                /** b. 2nd/last item of media item: either image of textual content */
+                /** Either pseudo selector nth-child(2) or last-child will work */
+                & > *:nth-child(2){
+                    visibility: visible;
+                    animation: translate_in_right_item_animation $mediaItem_TransitionTime;//OK
+                    
+                    &.hide{
+                        visibility:hidden;
+                    }
+                }
+
+            }//& > div.wp-block-media-text.chocolate-benefits
+
+        }//& > div.wp-block-group.cocoa-benefits-container-desktop
+
+        /** 2. Display cocoa benefits content for mobile */
+        & > div.wp-block-group.cocoa-benefits-container-mobile{
+            border : 2px solid black;
+        }//& > div.wp-block-group.cocoa-benefits-container-mobile
+
+    }//div.entry-content
+
+}//article#post-4129

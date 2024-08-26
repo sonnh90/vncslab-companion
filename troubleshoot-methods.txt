@@ -1,0 +1,9 @@
+
+
+1. Using var_dump() as usual
+
+2. Using PluginDebugHelper class to log into the vncslab-companion-debug.log
+
+3. Using the VNCSLAB Debug Template (registered for both default post type & custom post type)
+- The VNCSLAB Debug Template has been registered for the WordPress default post type: page, post
+

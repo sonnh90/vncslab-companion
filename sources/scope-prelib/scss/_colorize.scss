@@ -1,0 +1,36 @@
+/**
+*    @Package sunsetpro plugin
+* * Need to test the code in the actual position before import. (file sunsetpro.scss)
+**/
+
+/* Color code */
+$primary-color: #000000;
+$dark-grey: #333333;
+$light-black:#1A1110;
+$light-grey: #898989;
+$lighter-grey: #F1F1F1; // For footer of each standard post
+$light-white:#fffff7;
+$dark-grey:#5A5A5A;
+$orange: #FF9D1D;
+$orange-hover: #F56B08;
+
+/*Filter color*/
+
+$filterWhiteValue: invert(97%) sepia(0%) saturate(7486%) hue-rotate(14deg) brightness(102%) contrast(101%);
+$filterWhiteValueWithBlackShadow: $filterWhiteValue + drop-shadow(1px 2px 1px rgb(0 0 0 / 0.8));
+$filterLightGrey: invert(84%) sepia(3%) saturate(0%) hue-rotate(142deg) brightness(102%) contrast(94%);
+$filterLightGreyWithShadow: $filterLightGrey + drop-shadow(1px 2px 1px rgb(0 0 0 / 0.8));
+
+.colorize-white{
+    filter: $filterWhiteValue;
+}
+
+.colorize-white-with-black-shadow{
+    filter: $filterWhiteValueWithBlackShadow;
+}
+
+.colorize-black{
+    filter: invert(0%) sepia(0%) saturate(7484%) hue-rotate(305deg) brightness(89%) contrast(100%);
+}
+
+

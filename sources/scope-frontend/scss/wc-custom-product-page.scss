@@ -1,0 +1,248 @@
+/***
+* Package: vncslab-companion
+* Author : Leon Nguyen <sonnh2109@gmail.com>
+*/
+
+@import '../../scope-prelib/scss/variables';
+@import '../../scope-prelib/scss/mixins';
+@import '../../scope-prelib/scss/colorize';
+@import '../../scope-prelib/scss/icons';
+
+$thumbnail_pill_width: 112,46px;
+$thumbnail_pill_height: 112,46px;
+
+$carousel_pills_sliding_forward_distance: $thumbnail_pill_width;
+$carousel_pills_sliding_backward_distance: -$thumbnail_pill_width;
+
+/** 1. Customize the WooCommerce Product Gallery display */
+div.woocommerce-product-gallery{
+
+    & > div.ct-product-gallery-container {
+
+        /** Styling the WooCommerce gallery thumbnails as simple carousel */
+        & > div.flexy-container{
+
+            /** 1. Big thumbnail image size: 600 x 600 */
+            & > div.flexy{
+                border: 2px solid rgba(0,0,0,1);                
+            }//div.flexy   
+            
+            /** 2. Thumbnail pills lists */
+            & > div.flexy-pills[data-type="thumbs"]{
+                border: 2px solid black;
+
+                /** Ordered list contains thumbnail images as list item */
+                & > ol{
+                    // Styling the curent active carousel item
+                    & > li.active{                       
+                        background-color: rgba(0,255,0,0.5);
+
+                    }//li.active
+
+                    & > li.active.show{                       
+                        background-color: rgba(0,255,0,0.5);
+                        
+                    }//li.active.show
+
+                    // Styling the inactive carousel items
+                    & > li{
+                        // Set to transparent background:
+                        background-color: rgba(0,0,0,0.0);
+                    }
+                }
+            }//div.flexy-pills
+        }//div.flexy-container
+    }//div.ct-product-gallery-container
+}//div.woocommerce-product-gallery
+
+div#vncslab-wc-product-thumbnails-pills-carousel{
+
+    border: 2px solid rgba(0,0,0, 0.5);
+    display: flex;
+    flex-direction: row;
+    flex-flow: row wrap;
+    position: relative;
+    height: 130,13px; // Using the value calculated by WooCommerce
+    width: 100%;
+
+    // 1. Carousel contents:
+    & > ol.pills-inner-container{
+        margin: 0 auto;
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: baseline;
+        justify-content: center;
+        // height: 112,46px; // Using the value calculated by WooCommerce
+        height: $thumbnail_pill_height;
+        width: 100%;
+
+        // Thumbnail image pills - styling as a carousel items 
+        & > li.pills-item{
+            display: none;
+            opacity: 0;
+            z-index: 5;
+            // @include transitionEaseInOut( 'opacity' , 600ms );
+
+            &.show{
+                display: block;
+                opacity: 1;
+                margin: 0.5em;
+                padding: 0;
+                // width: 112,46px;
+                // height: 112,46px;
+                width: $thumbnail_pill_width;
+                height: $thumbnail_pill_height;
+                @include translateHorizontal_EaseInOut( 0, 600ms );   
+                // @include transitionEaseInOut( 'opacity' , 600ms );             
+
+                & > span.ct-media-container{
+                    box-shadow: 5px 5px 5px 5px rgba(0,0,0, 0.5);
+                    width: 100%;
+                    height: 100%;
+                    padding :0;
+                    margin: 0;
+
+                    & > img {
+                        width: 100%;
+                        height: 100%;
+                        padding :0;
+                        margin: 0;
+                    }//img
+                }//& > span.ct-media-container
+            }//.show
+
+            &.carousel-sliding-next{
+                display: block;
+                opacity: 1;
+                // @include translateHorizontal_EaseInOut( 100%, 600ms );
+                // @include translateHorizontal_EaseInOut( $carousel_pills_sliding_backward_distance, 600ms );
+                @include translateHorizontal( -100% );
+
+                &.show-new-visible{
+                    display: block;
+                    opacity: 1;
+                    margin: 0.5em;
+                    padding: 0;
+                    // width: 112,46px;
+                    // height: 112,46px;
+                    width: $thumbnail_pill_width;
+                    height: $thumbnail_pill_height;
+                    @include translateHorizontal_EaseInOut( 0, 600ms );   
+                    // @include transitionEaseInOut( 'opacity' , 600ms );             
+    
+                    & > span.ct-media-container{
+                        box-shadow: 5px 5px 5px 5px rgba(0,0,0, 0.5);
+                        width: 100%;
+                        height: 100%;
+                        padding :0;
+                        margin: 0;
+    
+                        & > img {
+                            width: 100%;
+                            height: 100%;
+                            padding :0;
+                            margin: 0;
+                        }//img
+                    }//& > span.ct-media-container
+                }//.show-new-visible
+
+                &.hide-current-visible{
+                    display: block;
+                    opacity: 1;
+                    margin: 0.5em;
+                    padding: 0;
+                    // width: 112,46px;
+                    // height: 112,46px;
+                    width: $thumbnail_pill_width;
+                    height: $thumbnail_pill_height;
+                    @include translateHorizontal_EaseInOut( -100%, 600ms );   
+                }//.hide-current-visible
+            }//&.carousel-sliding-next
+
+            &.carousel-sliding-prev{
+                display: block;
+                opacity: 1;
+                // @include translateHorizontal_EaseInOut( -100%, 600ms );                   
+                // @include translateHorizontal_EaseInOut( $carousel_pills_sliding_forward_distance, 600ms );
+                @include translateHorizontal( 100% );
+
+                &.show-new-visible{
+                    display: block;
+                    opacity: 1;
+                    margin: 0.5em;
+                    padding: 0;
+                    // width: 112,46px;
+                    // height: 112,46px;
+                    width: $thumbnail_pill_width;
+                    height: $thumbnail_pill_height;
+                    @include translateHorizontal_EaseInOut( 0, 600ms );   
+                    // @include transitionEaseInOut( 'opacity' , 600ms );             
+    
+                    & > span.ct-media-container{
+                        box-shadow: 5px 5px 5px 5px rgba(0,0,0, 0.5);
+                        width: 100%;
+                        height: 100%;
+                        padding :0;
+                        margin: 0;
+    
+                        & > img {
+                            width: 100%;
+                            height: 100%;
+                            padding :0;
+                            margin: 0;
+                        }//img
+                    }//& > span.ct-media-container
+                }//&.show-new-visible
+
+                &.hide-current-visible{
+                    display: block;
+                    opacity: 1;
+                    margin: 0.5em;
+                    padding: 0;
+                    // width: 112,46px;
+                    // height: 112,46px;
+                    width: $thumbnail_pill_width;
+                    height: $thumbnail_pill_height;
+                    @include translateHorizontal_EaseInOut( 100%, 600ms ); 
+                }//&.hide-current-visible
+            }//&.carousel-sliding-prev           
+
+            // --> Define sliding prev new items
+        }//li.pills-item
+
+    }//ol.pills-inner-container
+
+    // 2. Carousel controller
+    // 2.1. Previous button
+    & > button.pills-control-prev{
+        display: block;
+        position: absolute;
+        background-color: rgba(0,0,0, 0.5);
+        z-index: 10;
+
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 2em;
+        height: auto;
+    }//& > button.carousel-control-prev
+
+    // 2.2. Next button
+    & > button.pills-control-next{
+        display:block;
+        position: absolute;
+        background-color: rgba(0,0,0, 0.5);
+        z-index: 10;
+
+        top: 0;
+        bottom: 0;
+        right: 0;
+        width: 2em;
+        height: auto;
+    }//& > button.carousel-control-next
+
+}//div#vncslab-wc-product-thumbnnails-pills-carousel
+

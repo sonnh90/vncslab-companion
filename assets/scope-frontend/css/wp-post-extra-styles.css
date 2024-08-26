@@ -1,0 +1,422 @@
+/***
+* Package: vncslab-companion
+* Author : Leon Nguyen <sonnh2109@gmail.com>
+*/
+/*
+*   @Package devsunsettheme
+* * Need to test the code in the actual position before import. (file devsunset.scss)
+**/
+/*
+Devsunset variables
+-----------------------
+*/
+/**
+*    @Package sunsetpro plugin
+* * Need to test the code in the actual position before import. (file sunsetpro.scss)
+**/
+/* Color code */
+/*Filter color*/
+.colorize-white {
+  filter: invert(97%) sepia(0%) saturate(7486%) hue-rotate(14deg) brightness(102%) contrast(101%);
+}
+
+.colorize-white-with-black-shadow {
+  filter: invert(97%) sepia(0%) saturate(7486%) hue-rotate(14deg) brightness(102%) contrast(101%)drop-shadow(1px 2px 1px rgba(0, 0, 0, 0.8));
+}
+
+.colorize-black {
+  filter: invert(0%) sepia(0%) saturate(7484%) hue-rotate(305deg) brightness(89%) contrast(100%);
+}
+
+/* article formats */
+/* Main header navigation menu */
+/* Common properties*/
+/* Menu item Dropdown icon */
+/* Menu items metadata*/
+/* Form control */
+/* Border information */
+/*** Screen width. Apply for styling according to the display screern size
+* Referential source to design size : https://getbootstrap.com/docs/5.3/layout/grid/
+*
+***/
+/**
+*    @Package devsunsettheme
+* * Need to test the code in the actual position before import. (file devsunset.scss)
+**/
+/*
+	Devsunsetnew Variables for mixins, keyframes
+	------------------------------------------------
+*/
+/*
+*   @Package devsunsettheme
+* * Need to test the code in the actual position before import. (file devsunset.scss)
+**/
+/*
+Devsunset variables
+-----------------------
+*/
+/**
+*    @Package sunsetpro plugin
+* * Need to test the code in the actual position before import. (file sunsetpro.scss)
+**/
+/* Color code */
+/*Filter color*/
+.colorize-white {
+  filter: invert(97%) sepia(0%) saturate(7486%) hue-rotate(14deg) brightness(102%) contrast(101%);
+}
+
+.colorize-white-with-black-shadow {
+  filter: invert(97%) sepia(0%) saturate(7486%) hue-rotate(14deg) brightness(102%) contrast(101%)drop-shadow(1px 2px 1px rgba(0, 0, 0, 0.8));
+}
+
+.colorize-black {
+  filter: invert(0%) sepia(0%) saturate(7484%) hue-rotate(305deg) brightness(89%) contrast(100%);
+}
+
+/* article formats */
+/* Main header navigation menu */
+/* Common properties*/
+/* Menu item Dropdown icon */
+/* Menu items metadata*/
+/* Form control */
+/* Border information */
+/*** Screen width. Apply for styling according to the display screern size
+* Referential source to design size : https://getbootstrap.com/docs/5.3/layout/grid/
+*
+***/
+/*
+	Devsunsetnew Mixins
+	------------------------------------------------
+*/
+/* Source transition :
+* https://css-tricks.com/almanac/properties/t/transition/
+*/
+/* 1. 'transition' properties mixin */
+/* @mixin animateEase( $attr, $time) {
+  -webkit-transition: $attr $time ease;
+  -moz-transition: $attr $time ease;
+  -ms-transition: $attr $time ease;
+  -o-transition: $attr $time ease;
+  transition: $attr $time ease;
+} */
+/* @mixin transitionEaseOut( $attr, $time) {
+  -webkit-transition: $attr $time ease-out;
+  -moz-transition: $attr $time ease-out;
+  -ms-transition: $attr $time ease-out;
+  -o-transition: $attr $time ease-out;
+  transition: $attr $time ease-out;
+}
+ */
+/* @mixin transitionEaseInOut( $attr, $time) {
+  -webkit-transition: $attr $time ease-in-out;
+  -moz-transition: $attr $time ease-in-out;
+  -ms-transition: $attr $time ease-in-out;
+  -o-transition: $attr $time ease-in-out;
+  transition: $attr $time ease-in-out;
+} */
+/* @mixin animateLinear( $attr, $time) {
+  -webkit-transition: $attr $time linear;
+  -moz-transition: $attr $time linear;
+  -ms-transition: $attr $time linear;
+  -o-transition: $attr $time linear;
+  transition: $attr $time linear;
+} */
+/* 2. animation properties mixin */
+/*----------------- Typical effects mixins ---------------------*/
+/* 
+@mixin translateHorizontal( $distance ){  
+  -webkit-transform: translateX( $distance ) !important;
+  -moz-transform: translateX( $distance ) !important;
+  -ms-transform: translateX( $distance ) !important;
+  -o-transform: translateX( $distance ) !important;
+  transform: translateX( $distance ) !important;
+} */
+/**
+Example values of fillBackgroundGradient mixin
+  background: -webkit-linear-gradient( to left top, blue, red);
+  background: -moz-linear-gradient( to left top, blue, red);
+  background: -ms-linear-gradient( to left top, blue, red);
+  background: -o-linear-gradient( to left top, blue, red);
+  background: linear-gradient( to left top, blue, red);
+
+**/
+/* @mixin transitionProps($var, $durationTime){
+  -webkit-transition: $var $durationTime;
+  -moz-transition:  $var $durationTime;
+  -ms-transition:  $var $durationTime;
+  -o-transition:  $var $durationTime;
+  transition: $var $durationTime;
+  -webkit-transform:
+ } */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes clockwiseSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes counterclockwiseSpin {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+/*----------------------------------------------------*/
+/** 3. Main header navigation menu  **/
+/*----------------------------------------------------*/
+/* 3.1. Mouse over/mouse out of a menu item */
+/* 3.1.1. Mouse over menu item effects */
+/* a. First level menu items (level 0) */
+@keyframes mouseover_first_menu_item_effect {
+  from {
+    background-color: transparent;
+    transition: background-color 320ms ease-in-out !important;
+  }
+  to {
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: background-color 320ms ease-in-out !important;
+  }
+}
+/* b. Sub level menu items (level 1,2,3 ) */
+@keyframes mouseleave_first_menu_item_effect {
+  from {
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: background-color 320ms ease-in-out !important;
+  }
+  to {
+    background-color: transparent;
+    transition: background-color 320ms ease-in-out !important;
+  }
+}
+/* 3.1.2. Mouse leave menu item effects */
+/* a. First level menu items (level 0) */
+@keyframes mouseover_sub_menu_item_effect {
+  from {
+    background-color: #1A1110;
+    transition: background-color 320ms ease-in-out !important;
+  }
+  to {
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: background-color 320ms ease-in-out !important;
+  }
+}
+/* b. Sub level menu items (level 1,2,3 ) */
+@keyframes mouseleave_sub_menu_item_effect {
+  from {
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: background-color 320ms ease-in-out !important;
+  }
+  to {
+    background-color: #1A1110;
+    transition: background-color 320ms ease-in-out !important;
+  }
+}
+/* 3.2. Effects for menu items level 0 */
+/* 3.2.1. Show sub menu items of the main nav menu item  */
+/* 3.2.2. Hide sub menu items of the main nav menu item */
+/* 3.3. Effects for menu items level 1,2,3 */
+/* 3.4. Effect for showing/hiding submenu items */
+/* DEBUGGING_TAG*/
+/* 3.4.1. Show/hide submenu level 1 */
+@keyframes show_first_level_submenu_effect {
+  from {
+    display: none;
+    opacity: 0;
+    background-color: #1A1110;
+    transform: translateY(-20%);
+    transition: transform 480ms ease-out !important;
+  }
+  to {
+    display: block;
+    opacity: 1;
+    background-color: #1A1110;
+    transform: translateY(0%);
+    transition: transform 480ms ease-out !important;
+  }
+}
+@keyframes hide_first_level_submenu_effect {
+  from {
+    display: block;
+    opacity: 1;
+    background-color: #1A1110;
+    transform: translateY(0%);
+    transition: transform 320ms ease-out !important;
+  }
+  to {
+    display: none;
+    opacity: 0;
+    background-color: #1A1110;
+    transform: translateY(-20%);
+    transition: transform 320ms ease-out !important;
+  }
+}
+/* 3.4.2. Show/hide submenu level 2,3,4 */
+@keyframes show_sub_level_submenu_effect {
+  from {
+    display: none;
+    opacity: 0;
+    background-color: #1A1110;
+    transform: translateX(-20%);
+    transition: transform 480ms ease-out !important;
+  }
+  to {
+    display: block;
+    opacity: 1;
+    background-color: #1A1110;
+    transform: translateX(0);
+    transition: transform 480ms ease-out !important;
+  }
+}
+@keyframes hide_sub_level_submenu_effect {
+  from {
+    display: block;
+    opacity: 1;
+    transform: translateX(0);
+    transition: transform 480ms ease-out !important;
+  }
+  to {
+    display: none;
+    opacity: 0;
+    transform: translateX(-20%);
+    transition: transform 480ms ease-out !important;
+  }
+}
+/**
+*    @Package sunsetpro plugin
+* * Need to test the code in the actual position before import. (file sunsetpro.scss)
+**/
+/* Color code */
+/*Filter color*/
+.colorize-white {
+  filter: invert(97%) sepia(0%) saturate(7486%) hue-rotate(14deg) brightness(102%) contrast(101%);
+}
+
+.colorize-white-with-black-shadow {
+  filter: invert(97%) sepia(0%) saturate(7486%) hue-rotate(14deg) brightness(102%) contrast(101%)drop-shadow(1px 2px 1px rgba(0, 0, 0, 0.8));
+}
+
+.colorize-black {
+  filter: invert(0%) sepia(0%) saturate(7484%) hue-rotate(305deg) brightness(89%) contrast(100%);
+}
+
+/**
+*    @Package sunsetprotheme
+* * Need to test the code in the actual position before import. (file sunsetpro.scss)
+**/
+/**
+*    @Package sunsetpro plugin
+* * Need to test the code in the actual position before import. (file sunsetpro.scss)
+**/
+/* Color code */
+/*Filter color*/
+.colorize-white {
+  filter: invert(97%) sepia(0%) saturate(7486%) hue-rotate(14deg) brightness(102%) contrast(101%);
+}
+
+.colorize-white-with-black-shadow {
+  filter: invert(97%) sepia(0%) saturate(7486%) hue-rotate(14deg) brightness(102%) contrast(101%)drop-shadow(1px 2px 1px rgba(0, 0, 0, 0.8));
+}
+
+.colorize-black {
+  filter: invert(0%) sepia(0%) saturate(7484%) hue-rotate(305deg) brightness(89%) contrast(100%);
+}
+
+.pills-control-prev-icon {
+  content: url("../../../assets/scope-frontend/icons/carousel-left-arrow-prev-controller.svg");
+  width: 2em;
+  height: 2em;
+  background-color: transparent;
+  filter: invert(97%) sepia(0%) saturate(7486%) hue-rotate(14deg) brightness(102%) contrast(101%);
+}
+
+.pills-control-next-icon {
+  content: url("../../../assets/scope-frontend/icons/carousel-right-arrow-next-controller.svg");
+  width: 2em;
+  height: 2em;
+  background-color: transparent;
+  filter: invert(97%) sepia(0%) saturate(7486%) hue-rotate(14deg) brightness(102%) contrast(101%);
+}
+
+/** I. Define helper functions */
+/** 1. Transition effect for media items - translate in */
+/** a. Keyframes definition - utilize some defined mixins in the "scope-prelib" directory */
+@keyframes translate_in_left_item_animation {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+@keyframes translate_in_right_item_animation {
+  0% {
+    transform: translateX(50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+/** b. Mixin transition - not work */
+/** Temporary target specific article post_ID = 4079*/
+article#post-4079 {
+  /** Main content of WP Post */
+}
+article#post-4079 > div.entry-content {
+  /** 1. Media contains text and image about chocolate benefits*/
+  /** 1.1. All media of chocolate benefits */
+  /** 1.2. Override all elements except the 1st child */
+  /** 1.3. Apply transition effects for media items */
+}
+article#post-4079 > div.entry-content > div.wp-block-media-text.chocolate-benefits {
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  border: 2px solid black;
+  /** a. Image area */
+  /** b. Text area */
+}
+article#post-4079 > div.entry-content > div.wp-block-media-text.chocolate-benefits > figure.wp-block-media-text__media {
+  height: 100%;
+  /** Inner image */
+}
+article#post-4079 > div.entry-content > div.wp-block-media-text.chocolate-benefits > figure.wp-block-media-text__media > img {
+  height: 100%;
+}
+article#post-4079 > div.entry-content > div.wp-block-media-text.chocolate-benefits > figure.wp-block-media-text__content {
+  height: 100%;
+}
+article#post-4079 > div.entry-content > div.wp-block-media-text.chocolate-benefits ~ div.wp-block-media-text.chocolate-benefits {
+  border-top: none;
+}
+article#post-4079 > div.entry-content > div.wp-block-media-text.chocolate-benefits {
+  visibility: visible;
+  /** a. First item of media item: either image of textual content */
+  /** b. 2nd/last item of media item: either image of textual content */
+  /** Either pseudo selector nth-child(2) or last-child will work */
+}
+article#post-4079 > div.entry-content > div.wp-block-media-text.chocolate-benefits > *:first-child {
+  visibility: visible;
+  animation: translate_in_left_item_animation 640ms;
+}
+article#post-4079 > div.entry-content > div.wp-block-media-text.chocolate-benefits > *:first-child.hide {
+  visibility: hidden;
+}
+article#post-4079 > div.entry-content > div.wp-block-media-text.chocolate-benefits > *:nth-child(2) {
+  visibility: visible;
+  animation: translate_in_right_item_animation 640ms;
+}
+article#post-4079 > div.entry-content > div.wp-block-media-text.chocolate-benefits > *:nth-child(2).hide {
+  visibility: hidden;
+}
